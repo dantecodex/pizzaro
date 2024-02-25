@@ -1,0 +1,135 @@
+.bottom-middle-section {
+    height: fit-content;
+
+}
+
+.goes {
+    width: fit-content;
+    height: 50px;
+    font-size: 35px;
+    text-align: center;
+    font-weight: 300;
+    margin-top: 50px;
+    color: black;
+    font-weight: 400;
+    border-bottom: 3.5px solid var(--primary);
+}
+
+.choose-pizza:nth-child(2) {
+    width: 65%;
+    height: 620px;
+    pointer-events: none;
+}
+
+.choose-pizza:nth-child(2) img {
+    width: 200px;
+    height: 250px;
+    object-fit: contain;
+}
+
+.pizza-cover2 {
+    position: relative;
+}
+
+.pizza-cover2 img {
+    width: 100%;
+
+}
+
+.box2 {
+    width: 370px;
+    height: fit-content;
+    margin: 10px;
+    text-align: center;
+    justify-content: space-between;
+    margin-top: 60px;
+    padding: 25px;
+    position: absolute;
+    top: 25px;
+    left: 400px;
+
+}
+
+.box2 p:nth-child(1) {
+    font-size: 31px;
+}
+
+.box2 p:nth-child(2) {
+    margin-top: 8px;
+    line-height: 25px;
+    font-style: italic;
+    font-size: 19px;
+    color: #858583;
+}
+
+.box2 p:nth-child(3) {
+    margin-top: 30px;
+    line-height: 25px;
+    font-style: italic;
+    font-size: 20px;
+    color: #858583;
+}
+
+.box2 span {
+    font-style: normal;
+    color: black;
+}
+
+.box2 .price p:nth-child(even) {
+    font-style: normal;
+    font-size: 24px;
+    color: black;
+}
+
+.add-to-cart p:nth-child(2) {
+    color: white;
+    font-style: normal;
+}
+
+.box2 .add-to-cart {
+    padding: 18px 30px;
+}
+
+.quality {
+    margin-top: 40px;
+    width: 70%;
+    height: 300px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.quality div {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.quality .icon {
+    color: #BDBDBD;
+    font-size: 110px;
+    font-weight: lighter;
+}
+
+.quality p:nth-child(2) {
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.quality p:nth-child(3) {
+    margin-top: 9px;
+    font-size: 19px;
+    color: #939391;
+    line-height: 20px;
+}
+
+.pizza-cover3 {
+    margin: 0 auto;
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.pizza-cover3 img {
+    width: 100%;
+}
