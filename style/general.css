@@ -1,0 +1,25 @@
+:root {
+    --primary: #C00A27;
+}
+
+body {
+    margin: 0 auto;
+    font-family: 'Open sans', 'Roboto', 'Calibri';
+    background-color: white;
+}
+
+@font-face {
+    font-family: "font-pizzaro";
+    src: url("../fonts/font-pizzaro.eot");
+    src: url("../fonts/font-pizzaro.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/font-pizzaro.woff") format("woff"),
+        url("../fonts/font-pizzaro.ttf") format("truetype"),
+        url("../fonts/font-pizzaro.svg#font-pizzaro") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon {
+    font-family: 'font-pizzaro';
+}
+
