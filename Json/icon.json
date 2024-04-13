@@ -1,0 +1,34 @@
+[
+    {
+        "iconWord": "A",
+        "iconName": "Pizza"
+    },
+    {
+        "iconWord": "a",
+        "iconName": "Burgers"
+    },
+    {
+        "iconWord": "e",
+        "iconName": "Salads"
+    },
+    {
+        "iconWord": "f",
+        "iconName": "Tacos"
+    },
+    {
+        "iconWord": "g",
+        "iconName": "Wraps"
+    },
+    {
+        "iconWord": "c",
+        "iconName": "Fries"
+    },
+    {
+        "iconWord": "e",
+        "iconName": "Salads"
+    },
+    {
+        "iconWord": "b",
+        "iconName": "Drinks"
+    }
+]

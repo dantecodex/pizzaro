@@ -1,0 +1,54 @@
+[
+    {
+        "name": "Cola Light",
+        "image": "./Images/disert/1.jpg",
+        "sizes": [
+            {
+                "size": "300 ml",
+                "price": 2.90
+            },
+            {
+                "size": "500 ml",
+                "price": 3.90
+            }
+        ]
+    },
+    {
+        "name": "Orange Juice",
+        "image": "./Images/disert/2.png",
+        "sizes": [
+            {
+                "size": "300 ml",
+                "price": 2.90
+            },
+            {
+                "size": "500 ml",
+                "price": 3.90
+            }
+        ]
+    },
+    {
+        "name": "Chocolate Cookie",
+        "image": "./Images/disert/3.png",
+        "sizes": [
+            {
+                "size": "1 set",
+                "price": 2.90
+            }
+        ]
+    },
+    {
+        "name": "Raspberry Ice",
+        "image": "./Images/disert/4.png",
+        "sizes": [
+            {
+                "size": "300 ml",
+                "price": 2.90
+            },
+            {
+                "size": "500 ml",
+                "price": 3.90
+            }
+        ]
+    }
+]

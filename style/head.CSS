@@ -11,13 +11,21 @@
 }
 
 .header-content {
+    
     margin: auto;
-    max-width: 1200px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    column-gap: 40px;
     align-items: center;
     border-bottom: 2px solid #C82741;
+    padding-top: 20px;
     padding-bottom: 25px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--primary);
+    width: 100%;
+    z-index: 999;
 }
 
 .nav p:hover {
@@ -88,6 +96,7 @@
 
 .menu {
     display: flex;
+    margin-top: 80px !important;
     margin: auto;
     max-width: 1200px;
     justify-content: space-around;

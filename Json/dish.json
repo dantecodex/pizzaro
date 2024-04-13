@@ -1,0 +1,153 @@
+{
+    "wrap": [
+        {
+            "id": 101,
+            "name": "Supreme Wrap",
+            "description": "Savory grilled beef patty wrapped with lettuce, tomato, onion, pickles, and special sauce in a soft tortilla",
+            "img": "./Images/Dishes/Wraps/wrap-1.png",
+            "sizes": [
+                {
+                    "size": "Regular",
+                    "price": 5.90
+                },
+                {
+                    "size": "Large",
+                    "price": 7.90
+                }
+            ]
+        },
+        {
+            "id": 102,
+            "name": "Veggie Wrap",
+            "description": "Grilled veggie patty wrapped with lettuce, tomato, onion, avocado, and vegan mayo in a whole grain tortilla",
+            "img": "./Images/Dishes/Wraps/wrap-2.webp",
+            "sizes": [
+                {
+                    "size": "Regular",
+                    "price": 5.50
+                },
+                {
+                    "size": "Large",
+                    "price": 7.50
+                }
+            ]
+        },
+        {
+            "id": 103,
+            "name": "Classic Cheese Wrap",
+            "description": "Juicy beef patty with melted American cheese, lettuce, tomato, onion, and ketchup wrapped in a soft tortilla",
+            "img": "./Images/Dishes/Wraps/wrap-3.webp",
+            "sizes": [
+                {
+                    "size": "Regular",
+                    "price": 6.50
+                },
+                {
+                    "size": "Large",
+                    "price": 8.50
+                }
+            ]
+        }
+    ],
+    
+    "pizza": [
+        {
+            "id": 201,
+            "name": "Supreme Pizza",
+            "description": "Ricotta, sun dried tomatoes, garlic, mozzarella cheese, topped with lightly drizzled red sauce, pesto, and fresh basil",
+            "img": "./Images/Dishes/Pizzas/pizza-1.jpg",
+            "sizes": [
+                {
+                    "size": "22 cm",
+                    "price": 19.90
+                },
+                {
+                    "size": "29 cm",
+                    "price": 25.90
+                }
+            ]
+        },
+        {
+            "id": 202,
+            "name": "Veggie Lover",
+            "description": "Extra-virgin olive oil, garlic, mozzarella cheese, onions, mushrooms, green olives, black olives, fresh tomatoes",
+            "img": "./Images/Dishes/Pizzas/pizza-2.jpg",
+            "sizes": [
+                {
+                    "size": "22 cm",
+                    "price": 19.90
+                },
+                {
+                    "size": "29 cm",
+                    "price": 25.90
+                }
+            ]
+        },
+        {
+            "id": 203,
+            "name": "Primo Meat",
+            "description": "Extra-virgin olive oil, mozzarella cheese, thinly-sliced steak meat, garlic, green peppers, mushrooms and tomatoes",
+            "img": "./Images/Dishes/Pizzas/pizza-3.jpg",
+            "sizes": [
+                {
+                    "size": "22 cm",
+                    "price": 19.90
+                },
+                {
+                    "size": "29 cm",
+                    "price": 25.90
+                }
+            ]
+        }
+    ],
+    "burger": [
+        {
+            "id": 301,
+            "name": "Supreme Burger",
+            "description": "Freshly grilled beef patty with lettuce, tomato, onion, pickles, and special sauce on a sesame seed bun",
+            "img": "./Images/Dishes/Burgers/burger-1.png",
+            "sizes": [
+                {
+                    "size": "Single",
+                    "price": 7.90
+                },
+                {
+                    "size": "Double",
+                    "price": 10.90
+                }
+            ]
+        },
+        {
+            "id": 302,
+            "name": "Veggie Burger",
+            "description": "Grilled veggie patty topped with lettuce, tomato, onion, avocado, and vegan mayo on a whole grain bun",
+            "img": "./Images/Dishes/Burgers/burger-2.jpeg",
+            "sizes": [
+                {
+                    "size": "Single",
+                    "price": 6.90
+                },
+                {
+                    "size": "Double",
+                    "price": 9.90
+                }
+            ]
+        },
+        {
+            "id": 303,
+            "name": "Classic Cheeseburger",
+            "description": "Juicy beef patty with melted American cheese, lettuce, tomato, onion, and ketchup on a toasted bun",
+            "img": "./Images/Dishes/Burgers/burger-3.png",
+            "sizes": [
+                {
+                    "size": "Single",
+                    "price": 7.50
+                },
+                {
+                    "size": "Double",
+                    "price": 10.50
+                }
+            ]
+        }
+    ]
+}
