@@ -103,12 +103,12 @@
 
 }
 
-.box .pizza-name {
+.box .dish-name {
     text-align: center;
     font-size: 25px;
 }
 
-.box .pizza-description {
+.box .dish-description {
     text-align: center;
     color: #858583;
     font-size: 18px;
@@ -151,6 +151,10 @@ sup {
     line-height: 15px;
     padding: 8px;
     background-color: white;
+    cursor: pointer;
+    &:active {
+        background-color: #e4c156;
+    }
 }
 
 .add-to-cart {

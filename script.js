@@ -67,8 +67,6 @@ function displayDisert(diserts) {
         disertPrice.append(priceCard);
     }
 
-
-
 }
 
 
@@ -113,35 +111,54 @@ function createMenu(categories) {
 
 function menuCard(dish, menu) {
     const chooseMenu = document.querySelector(".choose-menu-item");
-    console.log(dish.sizes);
+
     const menuCard = document.createElement("div");
     menuCard.className = menu == 'pizza' ? 'box' : 'box display-none';
     menuCard.dataset.id = dish.id;
     menuCard.dataset.category = menu;
     menuCard.innerHTML = `
 <img src="${dish.img}" alt="" onerror=setDefaultImage(this)>
-<p class="pizza-name">${dish.name}</p>
-<p class="pizza-description">${dish.description}</p>
+<p class="dish-name">${dish.name}</p>
+<p class="dish-description">${dish.description}</p>
 <p class="pick-size">____________________ <span style="font-style: normal; color: black;">Pick
         Size</span> ____________________</p>
 <div class="price">
-    <div>
-        <button>22<br>cm</button>
-        <p><sup>$</sup>19.90</p>
-    </div>
-    <div>
-        <button>29<br>cm</button>
-        <p><sup>$</sup>25.90</p>
-    </div>
+                            
 </div>
-<div class="add-to-cart">
+<div class="add-to-cart" data-id="${dish.id}" onclick="addToCart(${dish.id})">
     <i class="icon">h</i>
     <p>Add to Cart</p>
-</div>`
+</div>`;
 
     chooseMenu.appendChild(menuCard);
 
+    const dishPrices = menuCard.querySelector(".price");
+
+    for (const dishSize of dish.sizes) {
+
+        const chooseDishSize = document.createElement("div");
+        chooseDishSize.innerHTML = `
+        <button>${dishSize.size}</button>
+        <p><sup>$</sup>${dishSize.price}</p>
+        `;
+
+        chooseDishSize.addEventListener("click", event => {
+            // remove selected from menuCard
+            menuCard.querySelectorAll(".price button").forEach(selectedSize => {
+                selectedSize.classList.remove("selected");
+            });
+
+            event.target.classList.add("selected");
+        });
+
+        dishPrices.appendChild(chooseDishSize);
+    }
+
+
+    // dishCart(menuCard);
+
 }
+
 
 function hideDish(category) {
     document.querySelectorAll(".box").forEach(element => {
@@ -155,6 +172,36 @@ function hideDish(category) {
 
 function setDefaultImage(noimage) {
     noimage.src = '/Images/no-image.png';
+}
+
+
+// Add to cart ------------------------>
+
+let shoppingCart = [];
+
+function addToCart(dataId) {
+    const menuCard = document.querySelector(`[data-id = '${dataId}']`);
+
+    const dishId = menuCard.dataset.id;
+    const dishCategory = menuCard.dataset.category;
+    const dishName = menuCard.querySelector(".dish-name").textContent;
+    const dishSelectedSize = menuCard.querySelector(".selected");
+    const dishSize = dishSelectedSize ? dishSelectedSize.textContent : null;
+    const dishPrice = dishSelectedSize ? dishSelectedSize.nextElementSibling.textContent : null;
+
+    if (!dishSize || !dishPrice) {
+        alert('Select any size');
+        return;
+    }
+
+    shoppingCart.push({
+        id: dishId,
+        category: dishCategory,
+        name: dishName,
+        size: dishSize,
+        price: dishPrice
+    });
+    console.log(shoppingCart);
 }
 
 
