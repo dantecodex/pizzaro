@@ -2,7 +2,7 @@
 
 getIconData();
 async function getIconData() {
-    const response = await fetch("/json/icon.json");
+    const response = await fetch("/data/icon.json");
     const iconData = await response.json();
 
     for (const icon of iconData) {
@@ -26,7 +26,7 @@ function displayIcon(iconData) {
 getDisertData();
 
 async function getDisertData() {
-    const response = await fetch("/json/disert.json");
+    const response = await fetch("/data/disert.json");
     const disertData = await response.json();
 
     for (const diserts of disertData) {
@@ -75,7 +75,7 @@ function displayDisert(diserts) {
 
 getDishData();
 async function getDishData() {
-    const response = await fetch("/json/dish.json");
+    const response = await fetch("/data/dish.json");
     const menuData = await response.json();
 
     createMenu(Object.keys(menuData));
