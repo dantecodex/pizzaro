@@ -194,14 +194,40 @@ function addToCart(dataId) {
         return;
     }
 
-    shoppingCart.push({
-        id: dishId,
-        category: dishCategory,
-        name: dishName,
-        size: dishSize,
-        price: dishPrice
+    const existingItem = shoppingCart.findIndex(item => {
+        return dishId === item.id && dishSize === item.size;
     });
-    console.log(shoppingCart);
+    if (existingItem !== -1) {
+        shoppingCart[existingItem].quantity++;
+    }
+    else {
+        const addedItem = {
+            id: dishId,
+            category: dishCategory,
+            name: dishName,
+            size: dishSize,
+            price: dishPrice,
+            quantity: 1
+        };
+        shoppingCart.push(addedItem);
+    }
+    updateTotalQuantity();
+}
+
+
+function updateTotalQuantity() {
+    
+    let totalItems = shoppingCart.reduce((prev,next)=> {
+        return prev + next.quantity;
+    },0);
+
+    const updateCart = document.querySelectorAll(".header-content div");
+for (let i = 2; i <= 3; i++) {
+    updateCart[i].firstElementChild.textContent = 'h';
+    updateCart[i].lastElementChild.textContent = totalItems;
+    updateCart[i].lastElementChild.style.fontSize = '16px';
+}
+
 }
 
 

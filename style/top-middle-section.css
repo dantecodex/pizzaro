@@ -157,6 +157,10 @@ sup {
     }
 }
 
+.price .selected {
+    background-color: #e4c156;
+}
+
 .add-to-cart {
     margin-top: 40px !important;
     display: flex;
@@ -169,6 +173,10 @@ sup {
     margin: 0 auto;
     align-items: center;
     gap: 18px;
+    user-select: none;
+    &:active {
+        opacity: 0.8;
+    }
 }
 
 .add-to-cart .icon,
