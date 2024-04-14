@@ -95,6 +95,12 @@ async function getDishData() {
             hideDish(event.target.dataset.category);
         });
     });
+    if (shopCart) {
+        shoppingCart = JSON.parse(shopCart);
+        updateTotalQuantity();
+        console.log(shoppingCart);
+        shoppingCart.forEach(data => updateCart(data.id));
+    }
 
 }
 
@@ -177,11 +183,39 @@ function setDefaultImage(noimage) {
 
 // Add to cart ------------------------>
 
+
 let shoppingCart = [];
 
-function addToCart(dataId) {
-    const menuCard = document.querySelector(`[data-id = '${dataId}']`);
+const shopCart = localStorage.getItem("shoppingCart");
+window.addEventListener("DOMContentLoaded", () => {
 
+});
+
+
+
+
+function addToCart(dataId) {
+
+
+    addItemToCart(dataId);
+
+    updateTotalQuantity();
+    updateCart(dataId);
+}
+
+function removeFromCart(dataId) {
+
+
+    addItemToCart(dataId, "remove");
+
+    updateTotalQuantity();
+    updateCart(dataId);
+}
+
+
+
+function addItemToCart(dataId, type) {
+    const menuCard = document.querySelector(`[data-id = '${dataId}']`);
     const dishId = menuCard.dataset.id;
     const dishCategory = menuCard.dataset.category;
     const dishName = menuCard.querySelector(".dish-name").textContent;
@@ -189,7 +223,7 @@ function addToCart(dataId) {
     const dishSize = dishSelectedSize ? dishSelectedSize.textContent : null;
     const dishPrice = dishSelectedSize ? dishSelectedSize.nextElementSibling.textContent : null;
 
-    if (!dishSize || !dishPrice) {
+    if ((!dishSize || !dishPrice) && type == "remove") {
         alert('Select any size');
         return;
     }
@@ -198,7 +232,13 @@ function addToCart(dataId) {
         return dishId === item.id && dishSize === item.size;
     });
     if (existingItem !== -1) {
-        shoppingCart[existingItem].quantity++;
+        if (type == "remove") {
+            shoppingCart[existingItem].quantity--;
+        }
+        else {
+            shoppingCart[existingItem].quantity++;
+            // btnCount = shoppingCart[existingItem].quantity;
+        }
     }
     else {
         const addedItem = {
@@ -211,23 +251,62 @@ function addToCart(dataId) {
         };
         shoppingCart.push(addedItem);
     }
+    localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart));
+}
+
+
+function resetStorage() {
+    localStorage.removeItem("shoppingCart");
+    shoppingCart = [];
     updateTotalQuantity();
 }
 
-
 function updateTotalQuantity() {
-    
-    let totalItems = shoppingCart.reduce((prev,next)=> {
+
+    let totalItems = shoppingCart.reduce((prev, next) => {
         return prev + next.quantity;
-    },0);
+    }, 0);
 
     const updateCart = document.querySelectorAll(".header-content div");
-for (let i = 2; i <= 3; i++) {
-    updateCart[i].firstElementChild.textContent = 'h';
-    updateCart[i].lastElementChild.textContent = totalItems;
-    updateCart[i].lastElementChild.style.fontSize = '16px';
-}
+    for (let i = 2; i <= 3; i++) {
+        updateCart[i].firstElementChild.textContent = 'h';
+        updateCart[i].lastElementChild.textContent = totalItems;
+        updateCart[i].lastElementChild.style.fontSize = '16px';
+    }
 
 }
+
+function updateCart(dataId) {
+    const menuCard = document.querySelector(`[data-id = '${dataId}']`);
+    let btnCount = 0;
+    let items;
+    if (shoppingCart) {
+        items = shoppingCart.find(item => item.id == dataId);
+    }
+    btnCount = items.quantity;
+
+    if (btnCount > 0) {
+        menuCard.querySelector(".add-to-cart").removeAttribute("onclick");
+        menuCard.querySelector(".add-to-cart").innerHTML = `
+        <div style="color:white; display: contents;">
+         <div onclick="removeFromCart(${dataId})">-</div>
+         <p>${btnCount}</p>
+         <div onclick="addToCart(${dataId})">+</div>
+        </div> 
+        `;
+    }
+    else {
+        menuCard.querySelector(".add-to-cart").innerHTML = `
+        <div class="add-to-cart" data-id="${dataId}" onclick="addToCart(${dataId})">
+        <i class="icon">h</i>
+        <p>Add to Cart</p>
+        </div>`;
+    }
+
+    console.log(shoppingCart);
+}
+
+
+
 
 

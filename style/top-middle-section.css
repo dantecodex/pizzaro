@@ -152,6 +152,7 @@ sup {
     padding: 8px;
     background-color: white;
     cursor: pointer;
+
     &:active {
         background-color: #e4c156;
     }
@@ -174,6 +175,7 @@ sup {
     align-items: center;
     gap: 18px;
     user-select: none;
+
     &:active {
         opacity: 0.8;
     }
